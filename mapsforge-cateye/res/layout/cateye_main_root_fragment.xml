@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/layer_main_right"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true">
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/layer_main_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/attribution_margin"
+        android:gravity="center"
+        android:layout_alignParentRight="true">
+        <Button
+            android:id="@+id/btn_main_root_fragment_drawPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="绘制点"/>
+        <Button
+            android:id="@+id/btn_main_root_fragment_drawLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="绘制线"/>
+        <Button
+            android:id="@+id/btn_main_root_fragment_drawPolygon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="绘制面"/>
+        <Button
+            android:id="@+id/btn_main_root_fragment_drawFinish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="结束"/>
+        <Button
+            android:id="@+id/btn_main_root_fragment_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下载"/>
+    </LinearLayout>
+</RelativeLayout>

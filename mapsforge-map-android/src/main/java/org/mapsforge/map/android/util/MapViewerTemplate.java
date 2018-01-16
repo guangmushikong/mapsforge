@@ -17,9 +17,9 @@
  */
 package org.mapsforge.map.android.util;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.v7.app.AppCompatActivity;
 
 import org.mapsforge.core.model.LatLong;
 import org.mapsforge.core.model.MapPosition;
@@ -42,7 +42,7 @@ import java.util.List;
  * A abstract template map viewer activity that provides a standard life cycle and
  * modification points for mapsforge-based map activities.
  */
-public abstract class MapViewerTemplate extends Activity {
+public abstract class MapViewerTemplate extends AppCompatActivity {
 
     protected MapView mapView;
     protected PreferencesFacade preferencesFacade;
@@ -190,7 +190,11 @@ public abstract class MapViewerTemplate extends Activity {
      * @return
      */
     protected File getMapFileDirectory() {
-        return Environment.getExternalStorageDirectory();
+        File mapFileDirectory = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "CatEye");
+        if (!mapFileDirectory.exists()) {
+            mapFileDirectory.mkdirs();
+        }
+        return mapFileDirectory;
     }
 
     /**
@@ -345,6 +349,19 @@ public abstract class MapViewerTemplate extends Activity {
      * @return null or the HillsRenderConfig to use (defining height model path and algorithm)
      */
     protected HillsRenderConfig getHillsRenderConfig() {
+        return null;
+    }
+
+    @Override
+    public File getCacheDir() {
+        File mapFileDirectory = getMapFileDirectory();
+        if (mapFileDirectory.exists()) {
+            File cacheFile = new File(mapFileDirectory.getAbsolutePath() + File.separator + "cache");
+            if (!cacheFile.exists()) {
+                cacheFile.mkdirs();
+            }
+            return cacheFile;
+        }
         return null;
     }
 }

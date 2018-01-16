@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainView"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <org.mapsforge.map.android.view.MapView
+        android:id="@+id/mapView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <TextView
+        android:id="@+id/attribution"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/attribution_margin"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@string/copyright_osm"
+        android:textColor="#000"
+        android:textSize="@dimen/attribution_size" />
+
+    <RelativeLayout
+        android:id="@+id/layer_main_root_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/cateye_main_layer_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/holo_orange_dark"
+        android:orientation="vertical">
+
+        <CheckBox
+            android:id="@+id/chk_main_mapview_tms_world"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag=""
+            android:text="world_tms"></CheckBox>
+        <CheckBox
+            android:id="@+id/chk_main_mapview_xyz_world"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag=""
+            android:text="world_xyz"></CheckBox>
+        <CheckBox
+            android:id="@+id/chk_main_mapview_tms_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag=""
+            android:text="城市_tms"></CheckBox>
+        <CheckBox
+            android:id="@+id/chk_main_mapview_xyz_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag=""
+            android:text="城市_xyz"></CheckBox>
+        <CheckBox android:id="@+id/chk_main_mapview_xyz_gujiao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag=""
+            android:text="古交_xyz"></CheckBox>
+    </LinearLayout>
+</RelativeLayout>
